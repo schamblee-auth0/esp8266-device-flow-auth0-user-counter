@@ -174,6 +174,7 @@ void requestToken(bool refresh = false) {
   }
 }
 
+// Display user count on 7-segment displays
 void showUserCount() {
   uint16_t highDigits = userCount / 10000; // Value on left (high digits) display
   uint16_t lowDigits = userCount % 10000; // Value on right (low digits) display
@@ -200,7 +201,7 @@ void showUserCount() {
   lowDigitDisplay.writeDisplay();
 }
 
-// Send GET to User Count API
+// Send GET to User Count API and display response
 void displayUserCount() {
   String getHeader = "";
   getHeader += ("GET / HTTP/1.0\r\n");
